@@ -36,5 +36,27 @@ namespace LaMiaPizzeria.Controllers
                 return NotFound("Il post con id " + id + " non e' stato trovato!");
             }
         }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View("FormPizza");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Pizza nuovaPizza)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("FormPizza", nuovaPizza);
+            }
+
+            Pizza nuovaPizzaDaAggiungere = new Pizza(PizzaData.GetPizze().Count, nuovaPizza.Name, nuovaPizza.Description, nuovaPizza.Image, nuovaPizza.Price);
+            PizzaData.GetPizze().Add(nuovaPizzaDaAggiungere);
+
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
+

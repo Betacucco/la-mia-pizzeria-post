@@ -23,7 +23,7 @@
                     <img src=@pizzaNellaLista.Image class="card-img-top" alt="foto pizza">
                     <div class="card-body">
                         <h5 class="card-title">@pizzaNellaLista.Name</h5>
-                        <p><strong>@pizzaNellaLista.Prezzo.ToString("N2") &euro;</strong></p>
+                        <p><strong>@pizzaNellaLista.Price.ToString("N2") &euro;</strong></p>
                         <a class="btn btn-light border border-dark mx-3" href="@Url.Action("Details", "Pizza", new { id = pizzaNellaLista.Id })">Dettagli</a>
                         <span class="btn btn-dark ">Aggiungi al carrello</span>
                     </div>
@@ -33,6 +33,15 @@
      }
      </div>
 </div>
+
+<!--BOTTONE PER AGGIUNGERE PIZZE-->
+<div class="container mt-3 mb-3 text-center text-uppercase">
+    <h1>AGGIUNGI UNA PIZZA A QUELLE ELENCATE SOPRA CLICCANDO SUL BOTTONE</h1>
+    <a class="btn btn-dark" href="@Url.Action("Create", "Pizza")">
+        Nuova pizza
+    </a>  
+</div>
+
         
                        
 

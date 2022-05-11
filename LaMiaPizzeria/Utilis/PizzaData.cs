@@ -13,9 +13,7 @@ namespace LaMiaPizzeria.Utilis
                 return PizzaData.pizze;
             }
 
-            List<Pizza> nuovaListaPizze= new List<Pizza>();
-
-
+           List<Pizza> nuovaListaPizze= new List<Pizza>();
 
            Pizza pizza1 = new Pizza(1, "Pizza Margherita", "Ingredienti: mozzarella, basilico, pomodoro", "~/img/pizza-margherita.jpg", 4.50);
            nuovaListaPizze.Add(pizza1);
